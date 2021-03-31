@@ -1,0 +1,34 @@
+[{
+        "id": 1,
+        "name": "Joystick",
+        "image": "https://i.ibb.co/1vT2MVM/photo-1554213352-5ffe6534af08.jpg",
+        "price": 100
+
+    }, {
+        "id": 2,
+        "name": "Headphone",
+        "image": "https://i.ibb.co/QHTPWKZ/photo-1588780383829-2e16c0085c62.jpg",
+        "price": 150
+    }, {
+        "id": 3,
+        "name": "Loudspeaker",
+        "image": "https://i.ibb.co/1KKdN24/photo-1614755192999-b8ecede15458.jpg",
+        "price": 200
+    }, {
+        "id": 4,
+        "name": "Mobile",
+        "image": "https://i.ibb.co/r6sPmht/photo-1601784551446-20c9e07cdbdb.jpg",
+        "price": 250
+    },
+    {
+        "id": 5,
+        "name": "Laptop",
+        "image": "https://i.ibb.co/M1VPYhZ/photo-1541807084-5c52b6b3adef.jpg",
+        "price": 300
+    }, {
+        "id": 6,
+        "name": "Camera",
+        "image": "https://i.ibb.co/hYX44J7/photo-1516035069371-29a1b244cc32.jpg",
+        "price": 350
+    }
+]
