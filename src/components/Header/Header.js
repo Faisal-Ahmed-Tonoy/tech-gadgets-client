@@ -6,12 +6,14 @@ import './Header.css';
 const Header = () => {
     return (
         <Navbar className="header " collapseOnSelect expand="md" bg='dark'  variant="dark">
-        <Navbar.Brand >TEACH-HOUSE</Navbar.Brand>
+        <Navbar.Brand >TECH-GADGETS</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
-          <Link to="/home">  <h className="nav-link" style={{color:'white', textDecoration: 'none' }}>Home</h></Link> 
-            <Nav.Link >Pricing</Nav.Link>
+          <Link to="/home">  <h6 className="nav-link" style={{color:'white', textDecoration: 'none' }}>Home</h6></Link> 
+          <Link to="/checkout">  <h6 className="nav-link" style={{color:'white', textDecoration: 'none' }}>Checkout</h6></Link> 
+          <Link to="/manage">  <h6 className="nav-link" style={{color:'white', textDecoration: 'none' }}>Manage Product</h6></Link> 
+   
             <NavDropdown title="Dropdown" id="collapsible-nav-dropdown">
               <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
               <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
