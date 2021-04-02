@@ -9,14 +9,16 @@ const Products = (props) => {
     const {_id,image,name,price} =props.product
     const history = useHistory()
     const handleProceed =() =>{
-        history.push('/product/'+_id)
+        history.push('/checkout/'+_id)
     }
     
     return (
         
         
        
-   <div className="  col-md-4" >
+   <div className="  col-md-4 mt-2" >
+       
+ 
   <div>
   <img src={image} className="card-img-top " style={{height: '18rem'}} alt="..." />
    <div className="card-body">
@@ -25,7 +27,7 @@ const Products = (props) => {
      
      
  <div className="d-grid gap-2">
- <button  onClick={handleProceed}  className="btn btn-primary" type="button">        <Link to= {"/product/"+_id}>  <h6  style={{color:'white', textDecoration: 'none' }}>Buy Now</h6></Link>  </button>
+ <button  onClick={handleProceed}  className="btn btn-primary" type="button">        <Link to= {"/checkout/"+_id}>  <h6  style={{color:'white', textDecoration: 'none' }}>Buy Now</h6></Link>  </button>
      
    
  

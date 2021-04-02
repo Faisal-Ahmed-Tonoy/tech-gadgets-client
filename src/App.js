@@ -11,7 +11,7 @@ import {
  
 import { Container, Jumbotron, TabContainer } from 'react-bootstrap';
 import Home from './components/Home/Home';
-import Header from './components/Header/Header';
+ 
 import Manage from './components/Manage/Manage';
 import Checkout from './components/Checkout/Checkout ';
  
@@ -23,8 +23,7 @@ function App() {
    
   return (
     <Router>
-    <div className="col-sm-12 col-md-12">
-      <Header></Header>
+     
     
       
 
@@ -37,7 +36,7 @@ function App() {
         <Route path="/home">
           <Home></Home>
         </Route>
-        <Route path="/product/:_id">
+        <Route path="/checkout/:_id">
           <Checkout></Checkout>
         </Route>
        
@@ -46,7 +45,7 @@ function App() {
         </Route>
        
       </Switch>
-    </div>
+ 
   </Router>
   );
 }
