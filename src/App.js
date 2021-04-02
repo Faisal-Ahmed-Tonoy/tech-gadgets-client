@@ -1,4 +1,4 @@
- 
+import React, { createContext, useState } from 'react'; 
 import './App.css';
 
 import {
@@ -14,14 +14,22 @@ import Home from './components/Home/Home';
  
 import Manage from './components/Manage/Manage';
 import Checkout from './components/Checkout/Checkout ';
+import Login from './components/Login/Login';
+export const UserContext = createContext();
+ 
+
+ 
  
  
 
  
 
 function App() {
+  const [loggedInUser, setLoggedInUser] = useState({});
    
   return (
+    <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
+      <p>Name: {loggedInUser.name}</p>
     <Router>
      
     
@@ -40,6 +48,9 @@ function App() {
           <Checkout></Checkout>
         </Route>
        
+        <Route path="/login">
+     <Login></Login>
+        </Route>
         <Route path="/manage">
          <Manage></Manage>
         </Route>
@@ -47,6 +58,7 @@ function App() {
       </Switch>
  
   </Router>
+  </UserContext.Provider>
   );
 }
 
