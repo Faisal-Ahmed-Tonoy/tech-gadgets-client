@@ -5,27 +5,50 @@ import { useParams } from 'react-router';
 
 const Checkout  = () => {
     
-    const { key }=  useParams();
-    const [product,setProduct]=useState([]);
+    const { _id }=  useParams();
+    
+    const [product,setProduct]=useState({});
+   
     const {name,quantity,price} =product;
+    
+    
     
 
     useEffect(() =>{
-fetch('http://localhost:5000/product/'+key)
+fetch('http://localhost:5000/product/'+_id)
 .then(res =>res.json())
 .then(data =>setProduct(data));
  
-    },[key])
+    },[_id])
     console.log(product);
+   
     return (
-        <div>
-         <h1> Length:  {product.length}</h1> 
-         <h5 className="card-title">Name : {name}</h5>
-         <h5 className="card-title">Quantity : {quantity}</h5>
-         <h5 className="card-title">Price : {price}</h5>
-
+        <table class="table table-sm table-dark checkout-table" style={{marginTop:'200px'}} >
+        <thead>
+          <tr>
+           
+            <th scope="col">Product Name</th>
+            <th scope="col">Quantity</th>
+            <th scope="col">Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td  >{name}</td>
+            <td>{quantity}</td>
+            <td>${price}</td>
+            
+          </tr>
         
-        </div>
+          <tr>
+            <td  >Total</td>
+            <td >{quantity}</td>
+            <td >${price}</td>
+           
+          </tr>
+        </tbody>
+      </table>
+        
     );
 };
 

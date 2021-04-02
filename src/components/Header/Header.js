@@ -11,7 +11,7 @@ const Header = () => {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav className="mr-auto">
           <Link to="/home">  <h6 className="nav-link" style={{color:'white', textDecoration: 'none' }}>Home</h6></Link> 
-          <Link to="/checkout">  <h6 className="nav-link" style={{color:'white', textDecoration: 'none' }}>Checkout</h6></Link> 
+         
           <Link to="/manage">  <h6 className="nav-link" style={{color:'white', textDecoration: 'none' }}>Manage Product</h6></Link> 
    
             <NavDropdown title="Dropdown" id="collapsible-nav-dropdown">
