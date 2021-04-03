@@ -15,6 +15,7 @@ import Home from './components/Home/Home';
 import Manage from './components/Manage/Manage';
 import Checkout from './components/Checkout/Checkout ';
 import Login from './components/Login/Login';
+import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 export const UserContext = createContext();
  
 
@@ -44,9 +45,9 @@ function App() {
         <Route path="/home">
           <Home></Home>
         </Route>
-        <Route path="/checkout/:_id">
+        <PrivateRoute path="/checkout/:_id">
           <Checkout></Checkout>
-        </Route>
+        </PrivateRoute>
        
         <Route path="/login">
      <Login></Login>

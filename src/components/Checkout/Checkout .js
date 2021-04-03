@@ -4,8 +4,9 @@ import { useState } from 'react';
 import { useParams } from 'react-router';
 import { Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
-
+ 
 const Checkout  = () => {
+ 
     
     const { _id }=  useParams();
     
@@ -26,6 +27,7 @@ fetch('http://localhost:5000/checkout/'+_id)
    
     return (
       <div>
+          
       <Navbar className="header " collapseOnSelect expand="md" bg='dark'  variant="dark">
       <Navbar.Brand >TECH-GADGETS</Navbar.Brand>
       <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -44,7 +46,10 @@ fetch('http://localhost:5000/checkout/'+_id)
           </NavDropdown>
         </Nav>
         <Nav>
-        <Link to= {"/product/"+_id}>  <h6 className="nav-link" style={{color:'white', textDecoration: 'none' }}>Checkout </h6></Link>
+      
+        
+        <Link to= {"/product/"+_id}>  <h6 className="nav-link" style={{color:'white', textDecoration: 'none' }}>Checkout    </h6></Link>
+        
        
           
           <Nav.Link eventKey={2} href="#memes">

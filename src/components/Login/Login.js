@@ -14,7 +14,7 @@ if (!firebase.apps.length) {
 const Login = () => {
     const [loggedInUser, setLoggedInUser] = useContext(UserContext);
     const history = useHistory();
-    const location = useLocation();
+    const location = useLocation(); 
     const { from } = location.state || { from: { pathname: "/" } };
     const handleGoogleSignIn = () => {
         var provider = new firebase.auth.GoogleAuthProvider();
