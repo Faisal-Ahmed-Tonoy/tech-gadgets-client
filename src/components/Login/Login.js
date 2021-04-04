@@ -58,18 +58,23 @@ const Login = () => {
    </Navbar>
           
    
-   <div class="d-grid gap-2 col-3 mx-auto mt-5 card " style={{border: '2x solid red'}}>
+   <div class="d-grid gap-2 col-3 mx-auto mt-5 card " >
    <div  >
         
         <div className="card-body">
-          <h2 className="card-text" style={{border: '2x solid red',color:'#0D6EFD'}}>Please Click The </h2> 
-          <h2 className="card-text" style={{border: '2x solid red',color:'#0D6EFD'}} > Button Below </h2>
-          <h2 className="card-text" style={{border: '2x solid red',color:'#0D6EFD'}} > Login With Google </h2>
+          <h2 className="card-text " style={{color:'#198754'}}>Login </h2> 
+          <h6 className="card-text " style={{color:'#198754'}} > Username or Email </h6>
+          <hr></hr>
+          <h6 className="card-text" style={{color:'#198754'}} > Password </h6>
+          <hr></hr>
         </div>
       </div>      
    
-  <button  class="btn btn-primary mb-4" type="button"  onClick={handleGoogleSignIn} >Log in With Gmail</button>
+  <button  class="btn btn-success " type="button"   >Login</button>
+<h5 style={{color:'#0D6EFD'}}>You can aslo login using your gmail</h5>
+  <button  class="btn btn-primary mb-2" type="button"  onClick={handleGoogleSignIn} >Log in With Gmail</button>
 </div>
+
  
     
             </div>

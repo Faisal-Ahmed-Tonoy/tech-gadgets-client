@@ -1,29 +1,47 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useEffect } from 'react';
 import { useState } from 'react';
 import { useParams } from 'react-router';
 import { Nav, Navbar, NavDropdown } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { UserContext } from '../../App';
+ 
  
 const Checkout  = () => {
  
     
     const { _id }=  useParams();
+    const [ loggedInUser, setLoggedInUser]=useContext(UserContext)
     
-    const [checkout,setCheckout]=useState({});
+    const [product,setProduct]=useState({});
+    
    
-    const {name,quantity,price} =checkout;
+    const {name,price} =product;
+
     
     
     
 
     useEffect(() =>{
-fetch('http://localhost:5000/checkout/'+_id)
+fetch('http://localhost:5000/product/'+_id)
 .then(res =>res.json())
-.then(data =>setCheckout(data));
+.then(data =>setProduct(data));
  
     },[_id])
-    console.log(checkout);
+    console.log(product);
+
+    const handleOrder =() =>{
+      const newOrder ={...loggedInUser,name,price, orderTime:new Date().toDateString('dd,mm,yyyy,g:i A TT')}
+      
+   fetch('http://localhost:5000/placeOrder',{
+     method:'POST',
+     headers:{'Content-Type': 'application/json'},
+      body: JSON.stringify(newOrder)
+   })
+  .then(res =>res.json())
+.then(data =>{
+  alert("your order added to the card");
+}) }
    
     return (
       <div>
@@ -52,9 +70,7 @@ fetch('http://localhost:5000/checkout/'+_id)
         
        
           
-          <Nav.Link eventKey={2} href="#memes">
-            Dank memes
-          </Nav.Link>
+        <Link to="/order">  <h6 className="nav-link" style={{color:'white', textDecoration: 'none' }}>Order</h6></Link> 
         </Nav>
       </Navbar.Collapse>
     </Navbar>
@@ -72,19 +88,22 @@ fetch('http://localhost:5000/checkout/'+_id)
         <tbody>
           <tr>
             <td  >{name}</td>
-            <td>{quantity}</td>
+            <td>1</td>
             <td>${price}</td>
             
           </tr>
         
           <tr>
             <td  >Total</td>
-            <td >{quantity}</td>
+            <td >1</td>
             <td >${price}</td>
            
           </tr>
         </tbody>
       </table>
+       <button onClick={handleOrder}> Checkout </button>
+       
+      
       </div>
         
     );

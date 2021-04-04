@@ -36,7 +36,7 @@ const Home = () => {
               </NavDropdown>
             </Nav>
             <Nav>
-              <Nav.Link href="#deets">More deets</Nav.Link>
+            <Link to="/order">  <h6 className="nav-link" style={{color:'white', textDecoration: 'none' }}>Order</h6></Link> 
               <Link to="/login">  <h6 className="nav-link" style={{color:'white', textDecoration: 'none' }}>Login</h6></Link> 
             </Nav>
           </Navbar.Collapse>

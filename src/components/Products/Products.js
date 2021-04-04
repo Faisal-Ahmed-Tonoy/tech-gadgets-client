@@ -9,7 +9,7 @@ const Products = (props) => {
     const {_id,image,name,price} =props.product
     const history = useHistory()
     const handleProceed =() =>{
-        history.push('/checkout/'+_id)
+        history.push('/product/'+_id)
     }
     
     return (
@@ -27,7 +27,7 @@ const Products = (props) => {
      
      
  <div className="d-grid gap-2">
- <button  onClick={handleProceed}  className="btn btn-primary" type="button">        <Link to= {"/checkout/"+_id}>  <h6  style={{color:'white', textDecoration: 'none' }}>Buy Now</h6></Link>  </button>
+ <button  onClick={handleProceed}  className="btn btn-primary" type="button">        <Link to= {"/product/"+_id}>  <h6  style={{color:'white', textDecoration: 'none' }}>Buy Now</h6></Link>  </button>
      
    
  
