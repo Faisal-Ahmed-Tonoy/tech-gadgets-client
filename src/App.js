@@ -17,6 +17,9 @@ import Checkout from './components/Checkout/Checkout ';
 import Login from './components/Login/Login';
 import PrivateRoute from './components/PrivateRoute/PrivateRoute';
 import Order from './components/Order/Order';
+import AddProduct from './components/AddProduct/AddProduct';
+ 
+
 export const UserContext = createContext();
  
 
@@ -59,7 +62,13 @@ function App() {
         <PrivateRoute path="/order">
          <Order></Order>
         </PrivateRoute>
-       
+        <PrivateRoute path="/order">
+        
+        </PrivateRoute>
+         <Route path="/addProduct">
+           <AddProduct></AddProduct>
+         </Route>
+            
       </Switch>
  
   </Router>

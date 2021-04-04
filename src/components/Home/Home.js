@@ -26,7 +26,8 @@ const Home = () => {
             <Link to="/home">  <h6 className="nav-link" style={{color:'white', textDecoration: 'none' }}>Home</h6></Link> 
 
             <Link to="/manage">  <h6 className="nav-link" style={{color:'white', textDecoration: 'none' }}>Manage Product</h6></Link> 
-
+            <Link to="/addProduct">  <h6 className="nav-link" style={{color:'white', textDecoration: 'none' }}>Admin</h6></Link> 
+            
               <NavDropdown title="Dropdown" id="collapsible-nav-dropdown">
                 <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
                 <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
