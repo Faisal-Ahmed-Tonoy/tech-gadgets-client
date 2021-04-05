@@ -12,7 +12,7 @@ const ProductList = (props) => {
     })
       .then((res) => res.json())
       .then((result) => {
-        console.log(result);
+        (window.confirm('The Item Has Deleted Please Reload To Proceed'))
       });
 
     }

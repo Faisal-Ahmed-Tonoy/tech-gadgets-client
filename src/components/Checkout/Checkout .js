@@ -40,6 +40,7 @@ fetch('http://localhost:5000/product/'+_id)
    })
   .then(res =>res.json())
 .then(data =>{
+  (window.confirm('Selected Item  Updated . Thank You'))
  
 }) }
    
