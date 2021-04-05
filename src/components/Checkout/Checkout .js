@@ -26,12 +26,13 @@ const Checkout  = () => {
 fetch('http://localhost:5000/product/'+_id)
 .then(res =>res.json())
 .then(data =>setProduct(data));
+
  
     },[_id])
     console.log(product);
 
     const handleOrder =() =>{
-      const newOrder ={...loggedInUser,name,price, orderTime:new Date().toDateString('dd,mm,yyyy,g:i A TT')}
+      const newOrder ={...loggedInUser,name,price, orderTime:new Date().toDateString('dd,mm,yyyy,g:i A TT','HH:mm:ss.')}
       
    fetch('http://localhost:5000/placeOrder',{
      method:'POST',
@@ -40,9 +41,11 @@ fetch('http://localhost:5000/product/'+_id)
    })
   .then(res =>res.json())
 .then(data =>{
-  (window.confirm('Selected Item  Updated . Thank You'))
  
-}) }
+ 
+ 
+}); (window.confirm('Item Added'))
+ }
    
     return (
       <div>
@@ -53,25 +56,27 @@ fetch('http://localhost:5000/product/'+_id)
       <Navbar.Collapse id="responsive-navbar-nav">
         <Nav className="mr-auto">
         <Link to="/home">  <h6 className="nav-link" style={{color:'white', textDecoration: 'none' }}>Home</h6></Link> 
-
-        <Link to="/manage">  <h6 className="nav-link" style={{color:'white', textDecoration: 'none' }}>Manage Product</h6></Link> 
-
-          <NavDropdown title="Dropdown" id="collapsible-nav-dropdown">
-            <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-            <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
-            <NavDropdown.Divider />
-            <NavDropdown.Item href="#action/3.4">Separated link</NavDropdown.Item>
+        <NavDropdown title="Admin" id="collapsible-nav-dropdown">
+            <NavDropdown.Item><Link to="/addProduct">  <h6 className="nav-link" style={{color:'grey', textDecoration: 'none' }}>Add Product</h6></Link> </NavDropdown.Item>
+            <NavDropdown.Item><Link to="/manage">  <h6 className="nav-link" style={{color:'grey', textDecoration: 'none' }}> Manage Product</h6></Link></NavDropdown.Item>
+            
           </NavDropdown>
+
+          <Link to="/order">  <h6 className="nav-link" style={{color:'white', textDecoration: 'none' }}>Order</h6></Link> 
+   
+        <Link to= {"/product/"+_id}>  <h6 className="nav-link" style={{color:'white', textDecoration: 'none' }}>Checkout    </h6></Link>
+     
+
+       
         </Nav>
         <Nav>
       
         
-        <Link to= {"/product/"+_id}>  <h6 className="nav-link" style={{color:'white', textDecoration: 'none' }}>Checkout    </h6></Link>
+        
         
        
           
-        <Link to="/order">  <h6 className="nav-link" style={{color:'white', textDecoration: 'none' }}>Order</h6></Link> 
+       
         </Nav>
       </Navbar.Collapse>
     </Navbar>
@@ -102,7 +107,7 @@ fetch('http://localhost:5000/product/'+_id)
           </tr>
         </tbody>
       </table>
-       <button onClick={handleOrder}> Checkout </button>
+       <button class="btn btn-primary m-2" onClick={handleOrder}> Checkout </button>
        
       
       </div>

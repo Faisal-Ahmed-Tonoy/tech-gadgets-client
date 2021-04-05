@@ -34,7 +34,7 @@ function App() {
    
   return (
     <UserContext.Provider value={[loggedInUser, setLoggedInUser]}>
-      <p>Name: {loggedInUser.name}</p>
+    
     <Router>
      
     
@@ -56,18 +56,18 @@ function App() {
         <Route path="/login">
      <Login></Login>
         </Route>
-        <Route path="/manage">
+        <PrivateRoute path="/manage">
          <Manage></Manage>
-        </Route>
+        </PrivateRoute>
         <PrivateRoute path="/order">
          <Order></Order>
         </PrivateRoute>
         <PrivateRoute path="/order">
         
         </PrivateRoute>
-         <Route path="/addProduct">
+         <PrivateRoute path="/addProduct">
            <AddProduct></AddProduct>
-         </Route>
+         </PrivateRoute>
             
       </Switch>
  
