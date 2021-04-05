@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import Checkout from '../Checkout/Checkout ';
 
 const Products = (props) => {
-    const {_id,image,name,price} =props.product
+    const {_id,imageURL,name,price} =props.product
     const history = useHistory()
     const handleProceed =() =>{
         history.push('/product/'+_id)
@@ -20,7 +20,7 @@ const Products = (props) => {
        
  
   <div>
-  <img src={image} className="card-img-top " style={{height: '18rem'}} alt="..." />
+  <img src={imageURL} className="card-img-top " style={{height: '18rem'}} alt="..." />
    <div className="card-body">
      <h5 className="card-title">Name : {name}</h5>
      <h5 className="card-text">Price: ${price}</h5>

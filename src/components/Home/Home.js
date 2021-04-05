@@ -8,10 +8,12 @@ import { Link } from 'react-router-dom';
 
 const Home = () => {
     const [products,setProducts]= useState([]);
+ 
     useEffect(() =>{ 
         fetch('http://localhost:5000/products')
         .then(res =>res.json())
         .then(data =>setProducts(data))
+ 
         
     },[])
     return (
@@ -42,10 +44,21 @@ const Home = () => {
             </Nav>
           </Navbar.Collapse>
         </Navbar>
+         {
+           products.length === 0 &&    
+           <div className="text-center">
+        <div className="spinner-border" role="status">
+          <span className="visually-hidden">Loading...</span>
+        </div>
+      </div>
+         
+         }
                
+           {  
+      
                
-           {
-            products.map(product => <Products  key={product.key} product={product}></Products>)
+            
+            products.map(product => <Products  key={product._id} product={product}></Products>)
         }
         </div>
         

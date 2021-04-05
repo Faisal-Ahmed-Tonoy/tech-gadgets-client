@@ -40,7 +40,7 @@ fetch('http://localhost:5000/product/'+_id)
    })
   .then(res =>res.json())
 .then(data =>{
-  alert("your order added to the card");
+ 
 }) }
    
     return (

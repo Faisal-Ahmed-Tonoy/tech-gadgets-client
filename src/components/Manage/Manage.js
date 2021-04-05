@@ -1,23 +1,34 @@
-import React from 'react';
-import productData from '../../data/data.json';
+import React, { useEffect, useState } from 'react';
+import ProductList from '../ProductList/ProductList';
+ 
+ 
 
-const Manage = () => {
-    console.log(productData);
-    const handleAddProduct=() =>{
-       fetch('http://localhost:5000/addProduct',{
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json'
-        },
-        body: JSON.stringify(productData) 
+const Manage = () => { 
+   
+   
+        const [products,setProducts]= useState([]);
+        
+            useEffect(() =>{ 
+                fetch('http://localhost:5000/products')
+                .then(res =>res.json())
+                .then(data =>setProducts(data))
          
-       })
+                
+            },[])
 
-    }
+
+       
     return (
-        <div>
-            <button onClick={handleAddProduct}>Add Product</button>
-        </div>
+       <div>
+ 
+{  
+      
+               
+            
+      products.map(product => <ProductList  key={product._id} product={product}></ProductList>)
+  }
+       </div>
+        
     );
 };
 
