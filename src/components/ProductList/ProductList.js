@@ -12,7 +12,7 @@ const ProductList = (props) => {
     })
       .then((res) => res.json())
       .then((result) => {
-        (window.confirm('Item Has Deleted. Reload To See Update.'))
+        (window.confirm('Item Has Deleted, Reload To See Update.'))
       });
 
     }
