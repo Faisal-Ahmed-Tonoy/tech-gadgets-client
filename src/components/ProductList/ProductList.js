@@ -15,7 +15,8 @@ const ProductList = (props) => {
     })
       .then((res) => res.json())
       .then((result) => {
-        (window.confirm('Item Has Deleted, Reload To See Update Or Go To Home Page.'))
+       
+         (window.confirm('Item Has Deleted, Reload To See Update Or Go To Home Page.'))
       });
 
     }
