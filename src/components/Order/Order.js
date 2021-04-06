@@ -9,7 +9,7 @@ const Order = () => {
     const [order,setOrder] =useState([]);
     const [ loggedInUser, setLoggedInUser]=useContext(UserContext)
     useEffect(() =>{
-        fetch('http://localhost:5000/order?email='+ loggedInUser.email)
+        fetch('https://young-basin-35516.herokuapp.com/order?email='+ loggedInUser.email)
         .then(res =>res.json())
         .then(data =>setOrder(data));
     },[])

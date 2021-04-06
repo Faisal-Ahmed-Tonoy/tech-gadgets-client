@@ -15,7 +15,7 @@ const AddProduct = () => {
        brand:data.brand,
        imageURL:imageURL
      };
-     const url = `http://localhost:5000/addProducts`;
+     const url = 'https://young-basin-35516.herokuapp.com/addProducts';
      console.log(eventData)
      fetch(url,{
        method: 'POST',

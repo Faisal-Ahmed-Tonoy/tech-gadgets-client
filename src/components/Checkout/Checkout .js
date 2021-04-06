@@ -23,7 +23,7 @@ const Checkout  = () => {
     
 
     useEffect(() =>{
-fetch('http://localhost:5000/product/'+_id)
+fetch('https://young-basin-35516.herokuapp.com/product/'+_id)
 .then(res =>res.json())
 .then(data =>setProduct(data));
 
@@ -34,7 +34,7 @@ fetch('http://localhost:5000/product/'+_id)
     const handleOrder =() =>{
       const newOrder ={...loggedInUser,name,price, orderTime:new Date().toDateString('dd,mm,yyyy,g:i A TT','HH:mm:ss.')}
       
-   fetch('http://localhost:5000/placeOrder',{
+   fetch('https://young-basin-35516.herokuapp.com/placeOrder',{
      method:'POST',
      headers:{'Content-Type': 'application/json'},
       body: JSON.stringify(newOrder)
