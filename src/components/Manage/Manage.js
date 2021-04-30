@@ -10,7 +10,24 @@ const Manage = () => {
    
         const [products,setProducts]= useState([]);
         
-        
+        const deleteProduct =(_id) =>{
+      
+          fetch('https://young-basin-35516.herokuapp.com/delete/'+_id, {
+        method: "DELETE",
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+        },
+      })
+        .then((res) => res.json())
+        .then((result) => {
+         
+           
+      
+          const newProducts =products.filter((product) =>product._id !== _id);
+          setProducts(newProducts);
+        });
+  
+      }
             useEffect(() =>{ 
                 fetch('https://young-basin-35516.herokuapp.com/products')
                 .then(res =>res.json())
@@ -53,7 +70,7 @@ const Manage = () => {
       
                
             
-      products.map(product => <ProductList  key={product._id} product={product}></ProductList>)
+    products.map(product => <ProductList  key={product._id} deleteProduct={deleteProduct} product={product}></ProductList>)
   }
        </div>
         
