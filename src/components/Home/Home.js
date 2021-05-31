@@ -21,7 +21,7 @@ const Home = () => {
            
            <div className="row " >
              <Navbar className="header " collapseOnSelect expand="md" bg='dark'  variant="dark">
-          <Navbar.Brand >TECH-GADGETS</Navbar.Brand>
+          {/* <Navbar.Brand >TECH-GADGETS</Navbar.Brand> */}
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
             <Nav className="mr-auto">
